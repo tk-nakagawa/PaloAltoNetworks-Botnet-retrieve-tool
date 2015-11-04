@@ -1,0 +1,138 @@
+# PaloAltoNetworks-Botnet-retrieve-tool
+
+--- Explanation ---
+
+* This script can retrieve the botnet report from Palo Alto Networks Firewall
+  through XML-API and filter it with the Confidence Level you set up, then mail 
+  to you the result.
+
+* Use cron(for Linux/Mac) or Time-scheduler(for Windows) to kick this script 
+  regularly.
+
+* This script calls PEAR(PHP Extension and Application Repository), so you 
+  need to install PEAR in advance.
+
+* Notification email(email subject, email body) can be customized as your 
+  favorite format.
+
+* Execution results are logged in "system.log".
+
+* Daily Botnet report is archived, if it exists.
+
+
+
+--- Limitation ---
+
+* The device which runs the script needs to communicate to Palo Alto Networks 
+  Firewall with HTTPS(or HTTP) directly.
+  [Not supported the HTTPS/HTTP communication through Proxy server]
+
+* Email Notification was tested on some SMTP server.
+  Supposing that most of SMTP servers are available, but you need to adjust 
+  mailout.php script to your SMTP server environment.
+
+
+
+--- Steps to setup ---
+
+1) Make sure that the HTTPS/HTTP communication is allowed on your Palo Alto 
+   Networks Firewall management port as well as the IP addresses are permitted 
+   from  the devices which run the script.
+
+
+
+2) Edit "config.txt" as your environment, and save it.
+   [example]
+     PA IPaddress: 1.1.1.1
+     XML-API admin: admin
+     XML-API password: admin
+     Botnet Report Filter Level: 4
+
+   [Note]
+   Do not edit the following, fail to read "config.txt" if you edit them .
+
+      "PA IPaddress:" in line 1
+      "XML-API admin:" in line 2
+      "XML-API password:" in line 3
+      "Botnet Report Filter Level:" in line 4
+   
+   if you want to retrive botnet reports from multiple devices or HA devices,
+   you configure all the devices as the same format.
+
+
+
+3) Make directory like "botnet" under your php directory, and put all the 
+   downloaded scripts on this directory(ex php/botnet) and then permit the 
+   script to "Read, Write, Execute" under this directory(ex php/botnet).
+
+   your "php/botnet" should be as following.
+   
+　　php/botnet/config.txt				: Configuration file
+　　php/botnet/botnet.php				: main script, kick this script with cron or time-scheduler
+　　php/botnet/lib/KeyGen.php			: sub-script for API key generation 
+　　php/botnet/lib/LoadConfig.php		: sub-script for load config.txt
+　　php/botnet/lib/Logging.php			: sub-script for logging
+　　php/botnet/lib/Mailout.php			: sub-script for email notification
+　　php/botnet/lib/Output.php			: sub-script for check the filtering result
+　　php/botnet/lib/Retrieve.php			: sub-script for retrieving/filtering botnet report
+　　php/botnet/lib/ShowSystemInfo.php	: sub-script for get SN etc from Firewall
+
+
+
+4) Adjust each php script to your environment and save it.
+
+4-1) botnet.php
+  - line2 				: timezone setting for log timestamp
+  - line3 				: $display=1 means the logs come up on your browser 
+						  if you kick the botnet.php script from your browser.
+  - line20/Line 21		: select either to match your environment, and comment out the other.
+
+
+4-2) KeyGen.php
+  - line3/line4			: select either to match the communication ptorotol (HTTPS or HTTP)
+						  and comment out the other.
+
+
+4-3) ShowSystemInfo.php
+  - line11/line12		: select either to match the communication ptorotol (HTTPS or HTTP)
+						  and comment out the other.
+
+
+4-4) Retrieve.php
+  - line11/line12		: select either to match the communication ptorotol (HTTPS or HTTP)
+						  and comment out the other.
+
+
+4-5) Mailout.php
+  - Configure the $params to match your SMTP server environment.
+
+     [example] use SMTP server on Yahoo mail (Yahoo Japan mail)
+     "host"    => "smtp.mail.yahoo.co.jp", // smtp server
+     "port"    => "587",                   // smtp port
+     "auth"    => true,                    // authentication on smtp server
+     "username"  => "your Yahoo mail ID",  // user accout on smtp server
+     "password"  => "your password",       // password for user account
+
+
+
+  - Configure the notification email ($sender, $recipients, $subject, $body)
+
+     $sender		: Type Notification Email sender or its email address
+     [example] $sender = "sender@abc.com";
+
+     $recipients	: Type Recipients email address, use ',' if multiple recipients
+     [example] $recipients =　"user1@abc.co.jp, user2@abc.co.jp";
+
+     $subject		: Notification email subject, customize this as you like
+
+     $body			: Use default, but you can edit this as your own risk.
+
+
+
+5) kick botnet.php script from cron on your favorite time for Linux/Mac.
+   If Windows is used, make '.bat file' to kick botnet.php and set time-scheduler 
+   to kick this '.bat file'on your favorite time.
+   
+   [example] botnet.bat
+       C:\xampp\php\php.exe C:\xampp\htdocs\botnet\botnet.php
+
