@@ -1,9 +1,8 @@
 # PaloAltoNetworks-Botnet-retrieve-tool
 
 --- Explanation ---
-* This script can retrieve the botnet report from Palo Alto Networks Firewall
-  through XML-API and filter it with the Confidence Level you set up, then mail 
-  to you the result.
+* This script can retrieve the botnet report from Palo Alto Networks Firewall through XML-API <br>
+  and filter it with the Confidence Level you set up, then mail to you the result.
 
 * Use cron(for Linux/Mac) or Time-scheduler(for Windows) to kick this script 
   regularly.
