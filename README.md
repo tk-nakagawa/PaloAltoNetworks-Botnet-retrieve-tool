@@ -39,11 +39,11 @@ the script.
 
 [Step-2] <br>
 Edit "config.txt" as your environment, and save it. <br>
-[example] 
-     PA IPaddress: 1.1.1.1
-     XML-API admin: admin
-     XML-API password: admin
-     Botnet Report Filter Level: 4
+[example] <br>
+     PA IPaddress: 1.1.1.1 <br>
+     XML-API admin: admin <br>
+     XML-API password: admin <br>
+     Botnet Report Filter Level: 4 <br>
 
    [Note]
    Do not edit the following, fail to read "config.txt" if you edit them .
