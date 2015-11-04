@@ -31,9 +31,10 @@
 
 --- Steps to setup ---
 
-1) Make sure that the HTTPS/HTTP communication is allowed on your Palo Alto Networks Firewall <br>
-   management port as well as the IP addresses are permitted from  the devices which run <br>
-   the script.
+[Step-1] 
+Make sure that the HTTPS/HTTP communication is allowed on your Palo Alto Networks Firewall <br>
+management port as well as the IP addresses are permitted from  the devices which run <br>
+the script.
 
 
 
