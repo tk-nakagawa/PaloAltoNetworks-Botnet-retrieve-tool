@@ -67,15 +67,15 @@
 
    your "php/botnet" should be as following.
    
-　　php/botnet/config.txt				: Configuration file
-　　php/botnet/botnet.php				: main script, kick this script with cron or time-scheduler
-　　php/botnet/lib/KeyGen.php			: sub-script for API key generation 
-　　php/botnet/lib/LoadConfig.php		: sub-script for load config.txt
-　　php/botnet/lib/Logging.php			: sub-script for logging
-　　php/botnet/lib/Mailout.php			: sub-script for email notification
-　　php/botnet/lib/Output.php			: sub-script for check the filtering result
-　　php/botnet/lib/Retrieve.php			: sub-script for retrieving/filtering botnet report
-　　php/botnet/lib/ShowSystemInfo.php	: sub-script for get SN etc from Firewall
+　    php/botnet/config.txt		: Configuration file
+　    php/botnet/botnet.php		: main script, kick this script with cron or time-scheduler
+　    php/botnet/lib/KeyGen.php		: sub-script for API key generation
+　    php/botnet/lib/LoadConfig.php	: sub-script for load config.txt
+　    php/botnet/lib/Logging.php	: sub-script for logging
+　    php/botnet/lib/Mailout.php	: sub-script for email notification
+　    php/botnet/lib/Output.php		: sub-script for check the filtering result
+　    php/botnet/lib/Retrieve.php	: sub-script for retrieving/filtering botnet report
+　    php/botnet/lib/ShowSystemInfo.php	: sub-script for get SN etc from Firewall
 
 
 
