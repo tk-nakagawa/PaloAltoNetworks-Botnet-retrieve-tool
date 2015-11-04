@@ -66,8 +66,8 @@
 
    your "php/botnet" should be as following.
    
-　  - php/botnet/config.txt		: Configuration file
-　  - php/botnet/botnet.php		: main script, kick this script with cron or time-scheduler
+　  "php/botnet/config.txt"		: Configuration file
+　  "php/botnet/botnet.php"		: main script, kick this script with cron or time-scheduler
 　  - php/botnet/lib/KeyGen.php		: sub-script for API key generation
 　  - php/botnet/lib/LoadConfig.php	: sub-script for load config.txt
 　  - php/botnet/lib/Logging.php	: sub-script for logging
