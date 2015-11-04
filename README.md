@@ -31,15 +31,15 @@
 
 --- Steps to setup ---
 
-[Step-1] 
+[Step-1] <br>
 Make sure that the HTTPS/HTTP communication is allowed on your Palo Alto Networks Firewall <br>
 management port as well as the IP addresses are permitted from  the devices which run <br>
 the script.
 
 
-
-2) Edit "config.txt" as your environment, and save it.
-   [example]
+[Step-2] <br>
+Edit "config.txt" as your environment, and save it. <br>
+[example] 
      PA IPaddress: 1.1.1.1
      XML-API admin: admin
      XML-API password: admin
