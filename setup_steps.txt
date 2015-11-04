@@ -47,9 +47,9 @@
 4) Adjust each php script to your environment and save it.
 
 4-1) botnet.php
-  - line2 				: timezone setting for log timestamp
-  - line3 				: $display=1 means the logs come up on your browser 
-						  if you kick the botnet.php script from your browser.
+  - line2 			: timezone setting for log timestamp
+  - line3 			: $display=1 means the logs come up on your browser 
+				  if you kick the botnet.php script from your browser.
   - line20/Line 21		: select either to match your environment, and comment out the other.
 
 
@@ -90,7 +90,7 @@
 
      $subject		: Notification email subject, customize this as you like
 
-     $body			: Use default, but you can edit this as your own risk.
+     $body		: Use default, but you can edit this as your own risk.
 
 
 
