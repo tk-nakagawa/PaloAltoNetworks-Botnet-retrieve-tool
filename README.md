@@ -4,14 +4,12 @@
 * This script can retrieve the botnet report from Palo Alto Networks Firewall through XML-API <br>
   and filter it with the Confidence Level you set up, then mail to you the result.
 
-* Use cron(for Linux/Mac) or Time-scheduler(for Windows) to kick this script 
-  regularly.
+* Use cron(for Linux/Mac) or Time-scheduler(for Windows) to kick this script regularly.
 
-* This script calls PEAR(PHP Extension and Application Repository), so you 
-  need to install PEAR in advance.
+* This script calls PEAR(PHP Extension and Application Repository), so you need to install <br>
+  PEAR in advance.
 
-* Notification email(email subject, email body) can be customized as your 
-  favorite format.
+* Notification email(email subject, email body) can be customized as your favorite format.
 
 * Execution results are logged in "system.log".
 
@@ -21,21 +19,21 @@
 
 --- Limitation ---
 
-* The device which runs the script needs to communicate to Palo Alto Networks 
-  Firewall with HTTPS(or HTTP) directly.
+* The device which runs the script needs to communicate to Palo Alto Networks Firewall with <br>
+  HTTPS(or HTTP) directly. <br>
   [Not supported the HTTPS/HTTP communication through Proxy server]
 
-* Email Notification was tested on some SMTP server.
-  Supposing that most of SMTP servers are available, but you need to adjust 
-  mailout.php script to your SMTP server environment.
+* Email Notification was tested on some SMTP server. <br>
+  Supposing that most of SMTP servers are available, but you need to adjust "Mailout.php" script <br>
+  to your SMTP server environment.
 
 
 
 --- Steps to setup ---
 
-1) Make sure that the HTTPS/HTTP communication is allowed on your Palo Alto 
-   Networks Firewall management port as well as the IP addresses are permitted 
-   from  the devices which run the script.
+1) Make sure that the HTTPS/HTTP communication is allowed on your Palo Alto Networks Firewall <br>
+   management port as well as the IP addresses are permitted from  the devices which run <br>
+   the script.
 
 
 
