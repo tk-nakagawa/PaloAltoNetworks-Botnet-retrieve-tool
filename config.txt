@@ -1,0 +1,4 @@
+PA IPaddress: 
+XML-API admin: 
+XML-API password: 
+Botnet Report Filter Level: 
