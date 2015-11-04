@@ -55,17 +55,17 @@
 
 4-2) KeyGen.php
   - line3/line4			: select either to match the communication ptorotol (HTTPS or HTTP)
-						  and comment out the other.
+				  and comment out the other.
 
 
 4-3) ShowSystemInfo.php
   - line11/line12		: select either to match the communication ptorotol (HTTPS or HTTP)
-						  and comment out the other.
+			 	  and comment out the other.
 
 
 4-4) Retrieve.php
   - line11/line12		: select either to match the communication ptorotol (HTTPS or HTTP)
-						  and comment out the other.
+				  and comment out the other.
 
 
 4-5) Mailout.php
