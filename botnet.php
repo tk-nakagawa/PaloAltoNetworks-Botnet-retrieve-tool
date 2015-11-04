@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Asia/Tokyo'); // timezone setting for log timestamp
-$display=1; // $display=1 ->display logs, $display=0 -> not display logs
+$display=0; // $display=1 ->display logs, $display=0 -> not display logs
 
 if (!is_dir('archive/')){ exec ('mkdir archive'); }
 if (!is_dir('log/')){ exec ('mkdir log'); }
